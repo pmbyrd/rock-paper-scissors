@@ -32,54 +32,47 @@ function playRound(playerChoice, computerChoice) {
     return (result = "It's a draw");
   } else if (playerChoice === "rock" && computerChoice === "scissors") {
     playerCount++;
-    return (result = "You win");
+    return (result = "Rock beats scissors, you win");
   } else if (playerChoice === "paper" && computerChoice === "rock") {
     playerCount++;
-    return (result = "You win");
+    return (result = "Paper beats rock, you win");
   } else if (playerChoice === "scissors" && computerChoice === "paper") {
     playerCount++;
-    return (result = "You win");
+    return (result = "Scissors beats paper, you win");
   } else {
     computerCount++;
     return (result = "You lose");
   }
 }
 
-// todo score()
 function score() {
-    let result;
+  let result;
   if (playerCount === 5) {
-    return result = "You win";
+    return (result = "Congratulations! You win!!!");
   } else if (computerCount === 5) {
-    return result = "You lose";
+    return (result = "Sorry, you lose");
   }
 }
 
-//TODO timer()
-// ?Can I create animation where the winner choice grows big, if both are the game they grow to 1.5 that size if the toggle the timer for 3 seconds
-
-// *when a button is pressed we execute this function
-// TODO game()
 function game() {
+  //*when the button is clicked we execute this function
   const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoices();
-  const result = playRound(playerChoice, computerChoice);
+  let result = playRound(playerChoice, computerChoice);
   gamesPlayed++;
   displayInstructions();
   displayResult(result);
   updateScore();
   console.table(playerCount, computerCount);
-  console.log(computerChoice);
-  console.log(result);
   if (playerCount === 5 || computerCount === 5) {
-    console.log(score());
+    result = score();
+    displayResult(result);
+    endGame();
   }
 }
 
-// todo add in a click event to the button
 $btn.on("click", game);
 
-// todo add in message to the user to let them know that they have won or lost and to display the computer choice
 function displayInstructions() {
   //works but must be invokes
   if (gamesPlayed !== 0) {
@@ -95,3 +88,25 @@ function updateScore() {
   $(".player-score").text(playerCount);
   $(".computer-score").text(computerCount);
 }
+
+function resetGame() {
+  playerCount = 0;
+  computerCount = 0;
+  gamesPlayed = 0;
+  $(".player-score").text(playerCount);
+  $(".computer-score").text(computerCount);
+  $(".result").text("");
+  $(".welcome").show();
+}
+
+
+// create an end game function that will be called when the player or computer reaches 5 points
+function endGame() {
+  if (playerCount === 5 || computerCount === 5) {
+    let result = score();
+    alert(result)
+    resetGame();
+  }
+}
+
+endGame();
