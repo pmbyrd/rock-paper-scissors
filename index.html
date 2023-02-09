@@ -20,24 +20,31 @@
   <body>
     <div class="container">
       <h1 class="heading"><span>R</span><span>P</span><span>S</span></h1>
-      <div class="display">
+      <div class="results">
         <div class="score">
-          <span class="computer">Computer: </span>
-          <span class="player">Player: </span>
+          <div class="players">
+            <span class="computer">Computer: </span>
+            <span class="player">Player: </span>
+          </div>
+          <!-- end of players div-->
+          <div class="result"></div>
         </div>
         <!--end of score div-->
-        <div class="result">
-          <span class="computer">Computer: </span>
-          <span class="player">Player: </span>
+        <div class="display">
+          <div class="players">
+            <span class="computer">Computer: </span>
+            <span class="player">Player: </span>
+          </div> 
+          <!-- end of players div-->
           <div class="instuctions">
             <p>
               Welcome to the game of Rock, Paper, Scissors! The objective of
               this game is to be the first player to win 5 rounds.
             </p>
-            <p>Good luck and have fun! May the best player win. </p>
+            <p>Good luck and have fun! May the best player win.</p>
           </div>
         </div>
-        <!--end of result div-->
+        <!--end of display div-->
       </div>
       <div class="computer">
         <div class="choices">
@@ -48,15 +55,19 @@
         </div>
         <div class="player">
           <!-- light font awesome rock, paper and scissor -->
-          <i id="computer-rock"class="far fa-hand-rock"></i>
-          <i id="computer-paper"class="far fa-hand-paper"></i>
-          <i id="computer-scissors"class="far fa-hand-scissors"></i>
+          <i id="computer-rock" class="far fa-hand-rock"></i>
+          <i id="computer-paper" class="far fa-hand-paper"></i>
+          <i id="computer-scissors" class="far fa-hand-scissors"></i>
         </div>
         <!--end of player div-->
       </div>
       <!--end of computer div-->
       <div class="form-group">
-        <input id="player-input" type="text" placeholder="rock paper scissors">
+        <input
+          id="player-input"
+          type="text"
+          placeholder="rock paper scissors"
+        />
         <button class="btn btn-dark">Enter</button>
       </div>
     </div>
