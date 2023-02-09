@@ -25,35 +25,35 @@ function getPlayerChoice() {
   return playerChoice;
 }
 
-function playRound(playerChoice, computerChoice) { //this function will be called in the game function, handle the logic of the game
+function playRound(playerChoice, computerChoice) {
+  //this function will be called in the game function, handle the logic of the game
+  let result;
   if (playerChoice === computerChoice) {
-    return "It's a draw";
+    return (result = "It's a draw");
   } else if (playerChoice === "rock" && computerChoice === "scissors") {
     playerCount++;
-    return "You win" ;
+    return (result = "You win");
   } else if (playerChoice === "paper" && computerChoice === "rock") {
     playerCount++;
-    return "You win";
+    return (result = "You win");
   } else if (playerChoice === "scissors" && computerChoice === "paper") {
     playerCount++;
-    return "You win";
+    return (result = "You win");
   } else {
     computerCount++;
-    return "You lose";
+    return (result = "You lose");
   }
-  
 }
 
 // todo score()
 function score() {
-    if (playerCount === 5) {
-        return "You win";
-    } else if (computerCount === 5) {
-        return "You lose";
-    }
+    let result;
+  if (playerCount === 5) {
+    return result = "You win";
+  } else if (computerCount === 5) {
+    return result = "You lose";
+  }
 }
-
-
 
 //TODO timer()
 // ?Can I create animation where the winner choice grows big, if both are the game they grow to 1.5 that size if the toggle the timer for 3 seconds
@@ -64,6 +64,10 @@ function game() {
   const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoices();
   const result = playRound(playerChoice, computerChoice);
+  gamesPlayed++;
+  displayInstructions();
+  displayResult(result);
+  updateScore();
   console.table(playerCount, computerCount);
   console.log(computerChoice);
   console.log(result);
@@ -72,14 +76,22 @@ function game() {
   }
 }
 
-
 // todo add in a click event to the button
 $btn.on("click", game);
 
-
 // todo add in message to the user to let them know that they have won or lost and to display the computer choice
 function displayInstructions() {
-  if (gamesPlayed === 0) {
-    
+  //works but must be invokes
+  if (gamesPlayed !== 0) {
+    return $(".welcome").hide();
   }
+}
+
+function displayResult(result) {
+  $(".result").text(result);
+}
+
+function updateScore() {
+  $(".player-score").text(playerCount);
+  $(".computer-score").text(computerCount);
 }
