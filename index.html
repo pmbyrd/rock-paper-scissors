@@ -32,25 +32,7 @@
           <div class="instuctions">
             <p>
               Welcome to the game of Rock, Paper, Scissors! The objective of
-              this game is to be the first player to win 5 rounds. Here's how to
-              play:
-            </p>
-            <p>
-              On each turn, you will select either rock, paper, or scissors by
-              clicking on the corresponding icon displayed on the screen.
-            </p>
-
-            <p>
-              Rock beats scissors, scissors beat paper, and paper beats rock.
-            </p>
-            <p>
-              If both you and the computer choose the same gesture, the round is
-              considered a tie and no one wins the point.
-            </p>
-            <p>
-              After each round, the winner will be announced and a point will be
-              awarded to that player. The first player to reach 5 points wins
-              the game.
+              this game is to be the first player to win 5 rounds.
             </p>
             <p>Good luck and have fun! May the best player win. </p>
           </div>
@@ -60,21 +42,21 @@
       <div class="computer">
         <div class="choices">
           <!-- dark font awesome rock, paper and scissor -->
-          <i class="fas fa-hand-rock"></i>
-          <i class="fas fa-hand-paper"></i>
-          <i class="fas fa-hand-scissors"></i>
+          <i id="computer-paper" class="fas fa-hand-paper"></i>
+          <i id="computer-rock" class="fas fa-hand-rock"></i>
+          <i id="computer-scissors" class="fas fa-hand-scissors"></i>
         </div>
         <div class="player">
           <!-- light font awesome rock, paper and scissor -->
-          <i class="far fa-hand-rock"></i>
-          <i class="far fa-hand-paper"></i>
-          <i class="far fa-hand-scissors"></i>
+          <i id="computer-rock"class="far fa-hand-rock"></i>
+          <i id="computer-paper"class="far fa-hand-paper"></i>
+          <i id="computer-scissors"class="far fa-hand-scissors"></i>
         </div>
         <!--end of player div-->
       </div>
       <!--end of computer div-->
       <div class="input">
-        <input type="text" placeholder="Enter your name" />
+        <input type="text" placeholder="rock paper scissors">
 
         <button class="btn btn-dark">Enter</button>
       </div>
