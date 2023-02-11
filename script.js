@@ -19,8 +19,9 @@ function getRandomNumber() {
 
 //TODO rework this function to listen for a click event on the buttons
 
-function getPlayerChoice(evt) {
-  let playerChoice;
+function getPlayerChoice() {
+  // assign the value of the button that was clicked to the playerChoice variable
+  let playerChoice = ""
   if ($(this).hasClass("rock")) {
     playerChoice = "rock"
   }
@@ -30,18 +31,19 @@ function getPlayerChoice(evt) {
   if ($(this).hasClass("scissors")) {
     playerChoice = "scissors"
   }
-  console.log(playerChoice)
 
-  return playerChoice;
+  console.log(playerChoice)
+  return playerChoice
+  
 }
 
 
 // onlick call getPlayerChoice
-$(".player-choice").on("click",getPlayerChoice);
-// onlick call game
-$(".player").on("click", game);
-// I need to work out the game logic
-// when a button is clicked it gets the player choice and the round is played
+$(".player-choice").on("click", function(){
+  let playerChoice = getPlayerChoice();
+  game(playerChoice);
+});
+
 
 
 function playRound(playerChoice, computerChoice) {
@@ -73,11 +75,13 @@ function score() {
   }
 }
 
-function game() {
+function game(playerChoice) {
   //*when the button is clicked we execute this function
-  const playerChoice = getPlayerChoice();
-  const computerChoice = getComputerChoices();
+  playerChoice = getPlayerChoice();
+  console.log(playerChoice)
+  let computerChoice = getComputerChoices();
   let result = playRound(playerChoice, computerChoice);
+
   gamesPlayed++;
   displayInstructions();
   displayResult(result);
@@ -88,7 +92,7 @@ function game() {
     displayResult(result);
     endGame();
   }
-  console.log("player choice", playerChoice,"computer choise", computerChoice);
+  console.log("player choice", playerChoice,"computer choice", computerChoice);
 }
 
 
