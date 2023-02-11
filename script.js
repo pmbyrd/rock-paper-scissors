@@ -1,10 +1,9 @@
-// ! I will be creating a game and the logic and steps written is the outline that I should attempt to follow
-// Create a function that will create a timer this will be used to trigger to toggle classes on the choices
+
 const choices = ["rock", "paper", "scissors"];
 let computerCount = 0;
 let playerCount = 0;
 let gamesPlayed = 0;
-// const $btn = $(".restart");
+const $btn = $(".restart");
 const $playerInput = $("#player-input");
 
 function getComputerChoices() {
@@ -39,6 +38,8 @@ function getPlayerChoice(evt) {
 
 // onlick call getPlayerChoice
 $(".player-choice").on("click",getPlayerChoice);
+// onlick call game
+$(".player").on("click", game);
 // I need to work out the game logic
 // when a button is clicked it gets the player choice and the round is played
 
@@ -72,7 +73,7 @@ function score() {
   }
 }
 
-function game(evt) {
+function game() {
   //*when the button is clicked we execute this function
   const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoices();
