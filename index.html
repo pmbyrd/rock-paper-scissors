@@ -31,19 +31,16 @@
       <p class="welcome">Good luck and have fun! May the best player win.</p>
     </div>
     <!--end of messages div-->
-    <div class="choices">
+    <div class="players">
       <div class="computer">
         <!-- dark font awesome rock, paper and scissor -->
         <i id="computer-paper" class="fas fa-hand-paper"></i>
         <i id="computer-rock" class="fas fa-hand-rock"></i>
         <i id="computer-scissors" class="fas fa-hand-scissors"></i>
       </div>
-      <!-- remove the input and change each option into a button -->
-      <div class="player">
-        <!-- light font awesome rock, paper and scissor -->
-        <button class="btn btn-primary player-choice rock"> <i class="far fa-hand-rock"></i></button>
-        <button class="btn btn-primary player-choice paper"><i class="far fa-hand-paper"></i></button>
-        <button class="btn btn-primary player-choice scissors"> <i class="far fa-hand-scissors"></i></button>
+        <button data-choice="rock" class="btn btn-primary player-choice"> <i class="far fa-hand-rock"></i></button>
+        <button data-choice="paper" class="btn btn-primary player-choice"><i class="far fa-hand-paper"></i></button>
+        <button data-choice="scissors" class="btn btn-primary player-choice"> <i class="far fa-hand-scissors"></i></button>
       </div>
     </div>
     <!-- add a btn to restart the game -->

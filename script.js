@@ -1,4 +1,4 @@
-
+let playerChoice = "";
 const choices = ["rock", "paper", "scissors"];
 let computerCount = 0;
 let playerCount = 0;
@@ -19,31 +19,16 @@ function getRandomNumber() {
 
 //TODO rework this function to listen for a click event on the buttons
 
-function getPlayerChoice() {
-  // assign the value of the button that was clicked to the playerChoice variable
-  let playerChoice = ""
-  if ($(this).hasClass("rock")) {
-    playerChoice = "rock"
-  }
-  if ($(this).hasClass("paper")) {
-    playerChoice = "paper"
-  }
-  if ($(this).hasClass("scissors")) {
-    playerChoice = "scissors"
-  }
 
-  console.log(playerChoice)
-  return playerChoice
-  
-}
+// function getPlayerChoice() {
+//   console.log("player choice")
+//   console.log($(this).data("choice"))
+//   playerChoice = $(this).data("choice");
+//   console.log(playerChoice)
+//   return playerChoice;
+// }
 
-
-// onlick call getPlayerChoice
-$(".player-choice").on("click", function(){
-  let playerChoice = getPlayerChoice();
-  game(playerChoice);
-});
-
+$(".player-choice").on("click", game);
 
 
 function playRound(playerChoice, computerChoice) {
@@ -77,7 +62,7 @@ function score() {
 
 function game(playerChoice) {
   //*when the button is clicked we execute this function
-  playerChoice = getPlayerChoice();
+  playerChoice = $(this).data("choice");
   console.log(playerChoice)
   let computerChoice = getComputerChoices();
   let result = playRound(playerChoice, computerChoice);
