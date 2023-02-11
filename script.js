@@ -4,7 +4,7 @@ const choices = ["rock", "paper", "scissors"];
 let computerCount = 0;
 let playerCount = 0;
 let gamesPlayed = 0;
-const $btn = $(".btn");
+// const $btn = $(".restart");
 const $playerInput = $("#player-input");
 
 function getComputerChoices() {
@@ -18,12 +18,30 @@ function getRandomNumber() {
   return choice;
 }
 
-function getPlayerChoice() {
-  //get the player choice value from the input field
-  const playerChoice = $playerInput.val();
-  playerChoice.toLowerCase(); // convert the player choice to lower case to avoid errors
+//TODO rework this function to listen for a click event on the buttons
+
+function getPlayerChoice(evt) {
+  let playerChoice;
+  if ($(this).hasClass("rock")) {
+    playerChoice = "rock"
+  }
+  if ($(this).hasClass("paper")) {
+    playerChoice = "paper"
+  }
+  if ($(this).hasClass("scissors")) {
+    playerChoice = "scissors"
+  }
+  console.log(playerChoice)
+
   return playerChoice;
 }
+
+
+// onlick call getPlayerChoice
+$(".player-choice").on("click",getPlayerChoice);
+// I need to work out the game logic
+// when a button is clicked it gets the player choice and the round is played
+
 
 function playRound(playerChoice, computerChoice) {
   //this function will be called in the game function, handle the logic of the game
@@ -54,7 +72,7 @@ function score() {
   }
 }
 
-function game() {
+function game(evt) {
   //*when the button is clicked we execute this function
   const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoices();
@@ -69,9 +87,11 @@ function game() {
     displayResult(result);
     endGame();
   }
+  console.log("player choice", playerChoice,"computer choise", computerChoice);
 }
 
-$btn.on("click", game);
+
+
 
 function displayInstructions() {
   //works but must be invokes
