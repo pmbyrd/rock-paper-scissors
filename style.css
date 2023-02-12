@@ -1,5 +1,94 @@
+/* add an effect where all the letters are 60px tall and have a purple to blue transistion rgb */
+/* body {
+    background-color: rgba(0, 0, 255, 0.8);
+
+} */
+body {
+    background-image: url(background.jpg);   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  
+.container {
+    border: 20px solid rgba(255, 255, 255, 0.4);
+    margin: 100px auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    heignt: 1200px;
+    width: 800px;
+    gap: 20px;
+    /* make background color lighter transparent */
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.players {
+    width: 80%;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.letter {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.computer,
+.player {
+    /* RGB a dark purple */
+    color: rgb(80, 0, 198);
+    font-size: 48px;
+    font-weight: bold;
+    /* make it fit one line */
+    white-space: nowrap;
+}
+
+.computer {
+    color: darkblue;
+}
+
+i {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.fas {
+    color: darkblue;
+    padding: 20px;
+}
+/* get the .fas last child */
+.fas:last-child {
+    padding-right: 0;
+}
+
 .far {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    transition: all 0.3s ease;
+    color: rgb(80, 0, 198);
+    padding: 20px;
+}
+
+button {
+    border: 20px solid rgba(255, 255, 255, 0.4);
+    background: none;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+.messages {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+}
+
+/* add an animation effect for the js function */
+AnimationEffect {
+    animation: AnimationEffect 1s;
 }

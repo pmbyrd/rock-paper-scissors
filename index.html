@@ -14,11 +14,15 @@
 
 <body>
   <div class="container">
-    <h1 class="heading"><span>R</span><span>P</span><span>S</span></h1>
+    <h1 class="heading"><span class="letter">R</span><span class="letter">P</span><span class="letter">S</span></h1>
     <div class="display">
       <div class="players">
-        <span class="computer">Computer: <span class="computer-score"></span></span>
-        <span class="player">Player: <span class="player-score"></span> </span>
+        <p>
+          <span class="computer">Computer: <span class="computer-score"></span></span>
+        </p>
+        <p>
+          <span class="player">Player: <span class="player-score"></span></span>
+        </p>
       </div>
       <div class="result"></div>
     </div>
@@ -32,25 +36,28 @@
     </div>
     <!--end of messages div-->
     <div class="players">
-      <div class="computer">
+      <div class="computer-selection">
         <!-- dark font awesome rock, paper and scissor -->
         <i id="computer-paper" class="fas fa-hand-paper"></i>
         <i id="computer-rock" class="fas fa-hand-rock"></i>
         <i id="computer-scissors" class="fas fa-hand-scissors"></i>
       </div>
-        <button data-choice="rock" class="btn btn-primary player-choice"> <i class="far fa-hand-rock"></i></button>
-        <button data-choice="paper" class="btn btn-primary player-choice"><i class="far fa-hand-paper"></i></button>
-        <button data-choice="scissors" class="btn btn-primary player-choice"> <i class="far fa-hand-scissors"></i></button>
-      </div>
+      <div class="player-selection">
+        <button data-choice="rock" class="btn  player-choice"> <i class="far fa-hand-rock"></i></button>
+        <button data-choice="paper" class="btn  player-choice"><i class="far fa-hand-paper"></i></button>
+        <button data-choice="scissors" class="btn  player-choice"> <i class="far fa-hand-scissors"></i></button>
+      </div> <!--end of player selection div-->
     </div>
+    <!-- <button class="btn btn-dark restart">Restart</button> -->
+  </div>  
     <!-- add a btn to restart the game -->
-    <button class="btn btn-dark restart">Restart</button>
     <!--end of container-->
     <!-- link js link jquery and fonts are awesome -->
     <!-- Library JS & our JS -->
     <script src="https://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/axios/dist/axios.js"></script>
     <script src="script.js"></script>
+    <script src="effects.js"></script>
 </body>
 
 </html>

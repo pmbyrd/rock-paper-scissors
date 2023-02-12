@@ -7,26 +7,17 @@ const $btn = $(".restart");
 const $playerInput = $("#player-input");
 
 function getComputerChoices() {
-  const computerChoice = getRandomNumber();
+  const computerChoice = getRandomNumber(choices.length);
   return choices[computerChoice];
 }
 
-function getRandomNumber() {
+function getRandomNumber(number) {
   // get the choices array length as the the numerical value to be passed through the Math.random() function
-  const choice = Math.floor(Math.random() * choices.length);
-  return choice;
+  const randomNumber = Math.floor(Math.random() * number);
+  return randomNumber;
 }
 
 //TODO rework this function to listen for a click event on the buttons
-
-
-// function getPlayerChoice() {
-//   console.log("player choice")
-//   console.log($(this).data("choice"))
-//   playerChoice = $(this).data("choice");
-//   console.log(playerChoice)
-//   return playerChoice;
-// }
 
 $(".player-choice").on("click", game);
 
@@ -91,7 +82,7 @@ function displayInstructions() {
 }
 
 function displayResult(result) {
-  $(".result").text(result);
+  $(".result").text(result).addClass("messages");
 }
 
 function updateScore() {
